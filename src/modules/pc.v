@@ -3,6 +3,8 @@ module PC #(parameter N = 32) (
     input [N-1:0] pcNext,
     output reg [N-1:0] pc
 );
+
+//Puede ser un error el output reg
     always @(posedge clk) begin
         pc <= pcNext;
     end

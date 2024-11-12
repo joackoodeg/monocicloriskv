@@ -5,6 +5,7 @@ module BR #(parameter N = 32) (
     input we,
     output [N-1:0] rd1, rd2
 );
+//Posiblemente: inicializar en 0 regFile
     reg [N-1:0] regFile [31:0]; // 32 registros de 32 bits
 
     assign rd1 = regFile[a1];

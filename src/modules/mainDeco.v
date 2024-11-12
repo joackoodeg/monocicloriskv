@@ -9,6 +9,8 @@ module mainDeco(
     output reg [1:0] aluOp       // Operación de la ALU (ALUOp)
 );
 
+//CUIDADO OUTPUT REG
+
     always @(*) begin
         // Valores por defecto (para evitar latches)
         branch = 0;
@@ -41,7 +43,7 @@ module mainDeco(
             end
             7'b0110011: begin // R-type
                 regWrite = 1;
-                immSrc = 2'bXX; // Innecesario en R-type, se marca como X
+                immSrc = 2'b00; // viejo: bXX - Innecesario en R-type, se marca como X
                 aluSrc = 0;
                 memWrite = 0;
                 resSrc = 0;

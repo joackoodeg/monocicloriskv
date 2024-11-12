@@ -17,7 +17,7 @@ module UC(
     wire [1:0] aluOp;
 
     // Instancia del Decodificador Principal
-    DecodificadorPrincipal mainDeco (
+    mainDeco mainDecoder (
         .op(op),
         .branch(branch),
         .resSrc(resSrc),
@@ -29,7 +29,7 @@ module UC(
     );
 
     // Instancia del Decodificador de ALU
-    ALUDecoder aluDeco (
+    aluDeco aluDecoder (
         .aluOp(aluOp),
         .func3(func3),
         .func7(func7),

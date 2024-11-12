@@ -5,7 +5,7 @@ module IM #(parameter N = 32) (
     reg [N-1:0] mem [31:0]; // 32 registros de 32 bits
 
     initial begin
-        $readmemb("instructions.mem", mem); // Carga instrucciones desde un archivo
+        //$readmemb("instructions.mem", mem); // Carga instrucciones desde un archivo
     end
 
     assign inst = mem[addressIM];

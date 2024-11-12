@@ -1,4 +1,4 @@
-module aluDecov(
+module aluDeco(
     input [1:0] aluOp,
     input [2:0] func3,
     input func7,

@@ -1,6 +1,6 @@
-`timescale 1ns / 1ps
-
-`include "../src/modules/alu.v"
+`default_nettype none
+`define DUMPSTR(x) `"x.vcd`"
+`timescale 100 ns / 10 ns
 
 module ALU_tb;
 
@@ -18,6 +18,8 @@ module ALU_tb;
     );
 
     initial begin
+        $dumpfile(`DUMPSTR(`VCD_OUTPUT));
+        $dumpvars(0, ALU_tb);
         // Prueba de suma
         srcA = 32'd10;
         srcB = 32'd5;
