@@ -1,5 +1,37 @@
 module PC #(parameter N = 32) (
     input clk,
+    input reset,
+    input [N-1:0] pcNext,
+    output reg [N-1:0] pc
+);
+
+    always @(posedge clk or posedge reset) begin
+        if (reset)
+            pc <= 32'h00000000;
+        else
+            pc <= pcNext;
+    end
+
+endmodule
+/*
+module PC #(parameter N = 32) (
+    input clk,
+    input reset,  // Add reset
+    input [N-1:0] pcNext,
+    output reg [N-1:0] pc
+);
+
+    always @(posedge clk) begin
+        if (reset)
+            pc <= 32'h0;
+        else
+            pc <= pcNext;
+    end
+endmodule
+*/
+/*
+module PC #(parameter N = 32) (
+    input clk,
     input [N-1:0] pcNext,
     output reg [N-1:0] pc
 );
@@ -9,6 +41,7 @@ module PC #(parameter N = 32) (
         pc <= pcNext;
     end
 endmodule
+*/
 
 /*
 Contador de programa: es un registro de 32 bits que guarda la dirección de la
